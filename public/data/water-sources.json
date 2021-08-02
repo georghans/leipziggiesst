@@ -361,6 +361,7 @@
         "hints":[
           "Handschwengelpumpe mit Brunnenschacht und Abdeckplatte vor Nr. 51/53 (Typ Kleiner Löwe)",
           "Status Juli 2021: betriebsbereit",
+          "Falls die Pumpe ausgetrocknet sein sollte, kann Sie durch Einfüllen von ca. 5 Litern Wasser oberhalb der Schwengellagerung wieder in Gang gebracht werden.",
           "<a target=\"_blank\" href=\"https://docs.google.com/document/d/16esg9h41BuYVe4_uuC0iRYi1bnyW2irrVPsVDdUvaGI/edit\">Anleitung</a>, wie man eine eingetrocknete Pumpe wieder reaktivieren kann"
         ],
         "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09263878"
@@ -377,7 +378,8 @@
         "created": "01.08.2021",
         "hints":[
           "Handschwengelpumpe mit Brunnenschacht und Abdeckplatte (Typ Delphin)",
-          "Status Juli 2021: betriebsbereit, wenn mit ca. 4 Liter Wasser gefüttert wurde",
+          "Status Juli 2021: betriebsbereit",
+          "Falls die Pumpe ausgetrocknet sein sollte, kann Sie durch Einfüllen von ca. 5 Litern Wasser oberhalb der Schwengellagerung wieder in Gang gebracht werden.",          
           "<a target=\"_blank\" href=\"https://docs.google.com/document/d/16esg9h41BuYVe4_uuC0iRYi1bnyW2irrVPsVDdUvaGI/edit\">Anleitung</a>, wie man eine eingetrocknete Pumpe wieder reaktivieren kann"
         ],
         "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09290408"
@@ -394,29 +396,13 @@
         "created": "01.08.2021",
         "hints":[
           "Handschwengelpumpe mit Brunnenschacht und Abdeckplatte vor Nr. 2a in Ecklage Dresdner Straße/Stephaniplatz (Typ Delphin)",
-          "Status Juli 2021: betriebsbereit, wenn mit ca. 6 Liter Wasser gefüttert wurde",
+          "Status Juli 2021: betriebsbereit", 
+          "Falls die Pumpe ausgetrocknet sein sollte, kann Sie durch Einfüllen von ca. 5 Litern Wasser oberhalb der Schwengellagerung wieder in Gang gebracht werden.",
           "<a target=\"_blank\" href=\"https://docs.google.com/document/d/16esg9h41BuYVe4_uuC0iRYi1bnyW2irrVPsVDdUvaGI/edit\">Anleitung</a>, wie man eine eingetrocknete Pumpe wieder reaktivieren kann"
         ],
         "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09294869"
       },
       "geometry": { "type": "Point", "coordinates": [12.39841, 51.33902] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "20210801_hsp_212",
-        "name": "HSP Nr. 212",
-        "type": "Handschwengelpumpe",
-        "address": "Riesaer Straße 1, 04328 Leipzig",
-        "created": "01.08.2021",
-        "hints":[
-          "Handschwengelpumpe mit Brunnenschacht und Abdeckplatte",
-          "Status Juli 2021: intakt, wenig Wasserdruck",
-          "<a target=\"_blank\" href=\"https://docs.google.com/document/d/16esg9h41BuYVe4_uuC0iRYi1bnyW2irrVPsVDdUvaGI/edit\">Anleitung</a>, wie man eine eingetrocknete Pumpe wieder reaktivieren kann"
-        ],
-        "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09262177"
-      },
-      "geometry": { "type": "Point", "coordinates": [12.438228800189393, 51.34686615] }
     },
     {
       "type": "Feature",
@@ -428,7 +414,8 @@
         "created": "01.08.2021",
         "hints":[
           "Handschwengelpumpe mit Brunnenschacht und Abdeckplatte an der Einmündung Robert-Blum-Straße (Typ Delphin)",
-          "Status Juli 2021: betriebsbereit, wenn mit ca. 5 Liter Wasser gefüttert wurde",
+          "Status Juli 2021: betriebsbereit",
+          "Falls die Pumpe ausgetrocknet sein sollte, kann Sie durch Einfüllen von ca. 5 Litern Wasser oberhalb der Schwengellagerung wieder in Gang gebracht werden.",          
           "<a target=\"_blank\" href=\"https://docs.google.com/document/d/16esg9h41BuYVe4_uuC0iRYi1bnyW2irrVPsVDdUvaGI/edit\">Anleitung</a>, wie man eine eingetrocknete Pumpe wieder reaktivieren kann"
         ],
         "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09264372"
