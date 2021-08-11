@@ -161,7 +161,7 @@
         "created": "17.05.2021",
         "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09293310"
       },
-      "geometry": { "type": "Point", "coordinates": [12.399113327264786,51.34722362769231] }
+      "geometry": { "type": "Point", "coordinates": [12.397809773683548, 51.34728310100338] }
     },
     {
       "type": "Feature",
@@ -246,7 +246,7 @@
         "created": "17.05.2021",
         "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09294871"
       },
-      "geometry": { "type": "Point", "coordinates": [12.327046394348145,51.313108415913696] }
+      "geometry": { "type": "Point", "coordinates": [12.3272607, 51.3153915] }
     },
     {
       "type": "Feature",
