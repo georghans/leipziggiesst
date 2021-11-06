@@ -421,6 +421,20 @@
         "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09264372"
       },
       "geometry": { "type": "Point", "coordinates": [12.41243, 51.35949] }
-    }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20211106_constanze_lintzel",
+        "name": "Constanze Lintzel",
+        "type": "Privatperson",
+        "address": "Gortschakoffweg 26, 04289 Leipzig",
+        "created": "06.11.2021",
+        "hints":[
+          "Einfach klingeln bzw. einfach anrufen unter 0177-2074533"
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.4443846, 51.2833188] }
+    }    
   ]
 }
