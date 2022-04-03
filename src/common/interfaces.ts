@@ -10,19 +10,22 @@ export interface DailyWaterAmountsType {
 export interface RawWateringType {
   amount: string;
   id: number;
-  time: string;
+  updated: string;
   timestamp: string;
   tree_id: string;
   username: string;
   uuid: string;
+  watering_id: string;
 }
 
 export interface WateringType {
   amount: number;
   id: string;
   username: string;
+  updated: string;
   timestamp: string;
   treeId: string;
+  wateringId: string;
 }
 export interface UserDataType {
   id: string;

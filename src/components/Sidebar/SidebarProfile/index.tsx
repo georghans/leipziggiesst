@@ -70,7 +70,9 @@ const SidebarProfile: FC<{
     treeId: "" + (num % 5),
     username: "example",
     amount: Number.parseInt((Math.random() * 200).toPrecision(1)),
-    timestamp: "2021-05-25T09:15:00.000"
+    timestamp: "2021-05-25T09:15:00.000",
+    updated: "2021-05-25T09:15:00.000",
+    wateringId: "dummyWateringId"
   }))
   const localUserData = {
     id: "0815",
@@ -131,7 +133,7 @@ const SidebarProfile: FC<{
       </>
     );
   }
-  
+
   return (
     <>
       <SidebarTitle>Profil</SidebarTitle>
@@ -153,7 +155,10 @@ const SidebarProfile: FC<{
           </>
         }
       >
-        <UsersWateringsList waterings={userData.waterings} showTreeName={true} />
+        <UsersWateringsList
+          waterings={userData.waterings}
+          showTreeName={true}
+        />
       </ExpandablePanel>
       <UserCredentials 
         userId={userData.id} 
@@ -161,7 +166,7 @@ const SidebarProfile: FC<{
         username={userData.username} 
         userProfile={userData.userProfile || {}} 
       />
-      {   canExportUserData && (
+      { canExportUserData && (
         <>
           <ButtonRound margin='15px' onClick={downloadUserDataCsv}>
             Download aller Nutzerdaten

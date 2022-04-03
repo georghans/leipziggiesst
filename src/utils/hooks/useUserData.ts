@@ -33,6 +33,6 @@ export const useUserData = (): {
   return {
     userData,
     error,
-    invalidate: () => queryClient.invalidateQueries(queryParams),
+    invalidate: () => queryClient.invalidateQueries(queryParams)
   };
 };

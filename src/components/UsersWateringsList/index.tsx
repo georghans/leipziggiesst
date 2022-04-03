@@ -1,7 +1,11 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
+import Delete from '@material-ui/icons/Delete'
+import Pencil from '@material-ui/icons/Edit'
 import { useHistory } from 'react-router';
 import { WateringType } from '../../common/interfaces';
+import { useCanUpdateWatering } from '../../utils/hooks/useCanUpdateWatering';
+import { useWateringActions } from '../../utils/hooks/useWateringActions';
 
 import { formatUnixTimestamp } from '../../utils/formatUnixTimestamp';
 import SmallParagraph from '../SmallParagraph';
@@ -81,13 +85,23 @@ const UsersWateringsList: FC<{
 }> = ({ waterings, showTreeName }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const history = useHistory();
+  const { isUpdatingWatering, deleteWatering } = useWateringActions(null);
   const surpassedMaxItems = waterings.length > MAX_ITEMS;
   const sortWaterings = (t1: WateringType, t2: WateringType) => t2.timestamp.localeCompare(t1.timestamp); 
   const listItems = isExpanded ? waterings : waterings.sort(sortWaterings).slice(0, MAX_ITEMS);
+  const canUpdateWaterings = new Map()
+  listItems.forEach(item => canUpdateWaterings[item.wateringId] =
+    useCanUpdateWatering(item.wateringId));
+
+  const deleteWateringAsync = async (wateringId) => {
+    await deleteWatering(wateringId);
+    // TODO find a better solution
+    window.location.reload();
+  }
 
   return (
     <WrapperOuter>
-      {listItems.map(({ id, username, timestamp, amount, treeId }: WateringType, index: number) => (
+    {listItems.map(({ id, username, timestamp, amount, treeId, wateringId }: WateringType, index: number) => (
         <Wrapper key={`Lastadopted-key-${id}-${index}`}  style={{ height: showTreeName ? "40px": "25px"}}>
           <FlexRow>
             { showTreeName ? <TreeButton
@@ -103,6 +117,16 @@ const UsersWateringsList: FC<{
           </FlexRow>
           <SmallParagraph>{`${amount}l`}</SmallParagraph>
           <StyledIcon src={iconDrop} alt='Water drop icon' />
+          { canUpdateWaterings[wateringId] && !isUpdatingWatering && (
+            <div onClick={() => history.push(`/watering/${wateringId}`)} style={{ paddingLeft: '10px', cursor: 'pointer' }}>
+              <Pencil style={{ fontSize: 14 }} />
+            </div>
+          )}
+          { canUpdateWaterings[wateringId] && !isUpdatingWatering && (
+            <div onClick={() => deleteWateringAsync(wateringId)} style={{ paddingLeft: '2px', cursor: 'pointer' }}>
+              <Delete style={{ fontSize: 14 }} />
+            </div>
+          )}
         </Wrapper>
       ))}
       {surpassedMaxItems && (

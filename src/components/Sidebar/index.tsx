@@ -6,11 +6,12 @@ import SidebarSearch from './SidebarSearch/';
 import SidebarProfile from './SidebarProfile/';
 import SidebarTree from './SidebarTree';
 import SidebarWaterSource from './SidebarWaterSource';
+import SidebarWatering from './SidebarWatering';
 import SidebarWrapper from './SidbarWrapper';
 
 const Sidebar: React.FC = () => (
   <Route
-    path={['/about', '/search', '/profile', '/tree/:treeId', '/watersource/:watersourceId']}
+    path={['/about', '/search', '/profile', '/tree/:treeId', '/watersource/:watersourceId', '/watering/:wateringId']}
     render={({ match }) => {
       return (
         <SidebarWrapper isVisible={!!match}>
@@ -19,6 +20,7 @@ const Sidebar: React.FC = () => (
             <Route path='/search' component={SidebarSearch} />
             <Route path='/tree/:treeId' component={SidebarTree} />
             <Route path='/watersource/:watersourceId' component={SidebarWaterSource} />
+            <Route path='/watering/:wateringId' component={SidebarWatering} />
             <Route path='/profile' component={SidebarProfile} />
           </Switch>
         </SidebarWrapper>

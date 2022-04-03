@@ -23,7 +23,7 @@ export const useUserProfileActions = (): {
 
   return {
     createUserProfile: async () => {
-      if (!user?.sub || !token || !userData) return;      
+      if (!user?.sub || !token || !userData) return;
       if (!userData.userProfile && userData.username && user.email) {
         const newUserProfile = await createUserProfile({ token, userId: user?.sub, username: userData.username, email: user.email })
         invalidateUserData();

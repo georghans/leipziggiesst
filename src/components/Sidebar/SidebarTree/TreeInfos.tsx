@@ -256,7 +256,10 @@ const TreeInfos: FC<{
               </>
             }
           >
-            <UsersWateringsList waterings={waterings} />
+            <UsersWateringsList
+              waterings={waterings}
+              showTreeName={false}
+            />
           </ExpandablePanel>
         )}
 
