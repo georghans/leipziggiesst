@@ -32,6 +32,40 @@ import ButtonRound from '../../ButtonRound';
 import SmallParagraph from '../../SmallParagraph';
 import { useAdoptingActions } from '../../../utils/hooks/useAdoptingActions';
 
+const logoWikipedia = '/images/Wikipedia-W-bold-in-square-Clean_(alt_crop).svg';
+const logoWikicommons = '/images/Green_circle_with_camera_and_white_border.svg';
+const logoWikidata = '/images/Wikidata-HS-icon.svg';
+const logoInfo = '/images/Information_icon_1(png).png'
+
+const steckbriefe = {
+  "Betula": "https://greatfono.com/c/7023885053899511182",
+  "Salix": "https://greatfono.com/c/6990567952668055182",
+  "Castanea": "https://greatfono.com/c/2891255545816357082",
+  "Quercus": "https://greatfono.com/c/2569422748747813082",
+  "Platanus": "https://greatfono.com/c/5479250807515618972",
+  "Acer": "https://greatfono.com/c/4072376172398825972",
+  "Fraxinus": "https://greatfono.com/c/8353480080627210972"
+}
+
+const WikipediaLogo = styled.img`
+  padding-bottom: 6px;
+  height: 15px;
+`;
+
+const WikicommonsLogo = styled.img`
+  padding-bottom: 2px;
+  height: 25px;
+`;
+
+const WikidataLogo = styled.img`
+  height: 30px;
+`;
+
+const InfoLogo = styled.img`
+  padding-bottom: 4px;
+  height: 20px;
+`;
+
 const { treetypes } = content.sidebar;
 
 const Wrapper = styled.div`
@@ -113,9 +147,17 @@ const TreeInfos: FC<{
     artdtsch,
     gattung,
     gattungdeutsch,
+    gattungwikipedia,
+    gattungwikidata,
+    gattungwikicommons,
+    artwikipedia,
+    artwikidata,
+    artwikicommons,
     caretaker,
     waterings,
   } = selectedTreeData;
+
+  const steckbrief = gattung && steckbriefe[gattung];
 
   const [open, setOpen] = useState(false);
 
@@ -182,12 +224,42 @@ const TreeInfos: FC<{
             <IconButton onClick={handleLink}><ShareIcon /></IconButton>
           </TreeTitle>
         )}
-        {!treeType &&
-          gattungdeutsch &&
-          gattungdeutsch !== 'undefined' &&
-          gattungdeutsch.toLowerCase() !== artdtsch?.toLowerCase() && (
-            <SublineSpan>{gattungdeutsch.toLowerCase()}</SublineSpan>
-          )}
+        {(artwikipedia || artwikicommons || artwikidata) && (
+          <InfoContainer>
+            <span style={{ paddingTop: "8px" }}>Baumart-Infos</span>
+            <InfoValue>
+            <div style={{ height: "40px" }}>
+                {artwikipedia && (
+                  <a
+                    href={artwikipedia}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <WikipediaLogo src={logoWikipedia} alt='Link zu Wikipedia-Eintrag' />
+                  </a>
+                )}
+                {artwikicommons && (
+                  <a
+                    href={artwikicommons}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <WikicommonsLogo src={logoWikicommons} alt='Link zu Wikicommons-Eintrag' />
+                  </a>
+                )}
+                {artwikidata && (
+                  <a
+                    href={artwikidata}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <WikidataLogo src={logoWikidata} alt='Link zu Wikidata-Eintrag' />
+                  </a>
+                )}
+              </div>
+            </InfoValue>
+          </InfoContainer>
+        )}
         {caretaker && caretaker.length > 0 && (
           <CaretakerDiv>
             <Icon iconType='water' height={32}></Icon>
@@ -203,6 +275,59 @@ const TreeInfos: FC<{
           <InfoContainer>
             <span>Name (wiss.)</span>
             <InfoValue>{artbot}</InfoValue>
+          </InfoContainer>
+        )}
+        {gattungdeutsch && (
+          <InfoContainer>
+            <span>Gattung</span>
+            <InfoValue>
+              {gattungdeutsch}
+            </InfoValue>
+          </InfoContainer>
+        )}
+        {(artwikipedia || artwikicommons || artwikidata) && (
+          <InfoContainer>
+            <span style={{ paddingTop: "8px" }}>Gattung-Infos</span>
+            <InfoValue>
+              <div style={{ height: "40px" }}>
+                {steckbrief && (
+                  <a
+                    href={steckbrief}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <InfoLogo src={logoInfo} alt='Link zu Baumsteckbrief' />
+                  </a>
+                )}
+                {gattungwikipedia && (
+                  <a
+                    href={gattungwikipedia}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <WikipediaLogo src={logoWikipedia} alt='Link zu Wikipedia-Eintrag' />
+                  </a>
+                )}
+                {gattungwikicommons && (
+                  <a
+                    href={gattungwikicommons}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <WikicommonsLogo src={logoWikicommons} alt='Link zu Wikicommons-Eintrag' />
+                  </a>
+                )}
+                {gattungwikidata && (
+                  <a
+                    href={gattungwikidata}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <WikidataLogo src={logoWikidata} alt='Link zu Wikidata-Eintrag' />
+                  </a>
+                )}
+              </div>
+            </InfoValue>
           </InfoContainer>
         )}
         {gattung && (

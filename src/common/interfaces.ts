@@ -98,6 +98,12 @@ export interface Tree {
   artbot?: string | null;
   gattungdeutsch?: string | null;
   gattung?: string | null;
+  gattungwikipedia?: string | null;
+  gattungwikidata?: string | null;
+  gattungwikicommons?: string | null;
+  artwikipedia?: string | null;
+  artwikidata?: string | null;
+  artwikicommons?: string | null;
   strname?: string | null;
   hausnr?: string | null;
   zusatz?: string | null;
