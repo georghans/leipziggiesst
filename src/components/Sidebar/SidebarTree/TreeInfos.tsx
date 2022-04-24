@@ -38,6 +38,7 @@ const logoWikidata = '/images/Wikidata-HS-icon.svg';
 const logoInfo = '/images/Information_icon_1(png).png'
 
 const steckbriefe = {
+  "Tilia": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf",
   "Betula": "https://greatfono.com/c/7023885053899511182",
   "Salix": "https://greatfono.com/c/6990567952668055182",
   "Castanea": "https://greatfono.com/c/2891255545816357082",
