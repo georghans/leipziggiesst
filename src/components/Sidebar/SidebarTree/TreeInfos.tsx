@@ -285,7 +285,7 @@ const TreeInfos: FC<{
             </InfoValue>
           </InfoContainer>
         )}
-        {(artwikipedia || artwikicommons || artwikidata) && (
+        {(gattungwikipedia || gattungwikicommons || gattungwikidata) && (
           <InfoContainer>
             <span style={{ paddingTop: "8px" }}>Gattung-Infos</span>
             <InfoValue>
