@@ -79,29 +79,28 @@ const content: Content = {
   whatsNew: {
     title: 'Was ist neu?',
     description: [
-      `Der Frühling kann kommen! Wir haben einige Funktionen verbessert und neue Funktionen hinzugefügt. Die wichtigsten Verbesserungen im Überblick:<br />
+      `Auf geht's in die neue Gieß-Saison! Wir haben wieder einige Funktionen verbessert und neue Funktionen hinzugefügt. Die wichtigsten Verbesserungen im Überblick:<br />
       <div style="padding-top:0.5rem;padding-bottom:0.5rem; display:flex">
         <div>
-          <img style="max-width:14px; margin-right: 5px;" alt="Geolocate Icon" src="/images/geolocate-icon.png"/><b>Geolokalisierung</b><br>
-          Mit einem Klick auf das Icon am unteren linken Bildschirmrand zum eigenen Standort navigieren.
+          <img style="width:25px; margin-right: 5px;" alt="Watering Icon" src="/images/icon-water.svg"/><b>Gießeinträge korrigieren</b><br>
+          Gießeinträge lassen sich nun nachträglich bearbeiten und kann so Wassermenge als auch das Datum korrigieren. Bei der Angabe der Wassermenge ist man dann auch nicht mehr 
+          an die festen Werten beim ersten Eintragen gebunden. Und ein Zurückdatierung der Gießung ist somit auch möglich, wenn man vergessen hatte, sie am gleichen Tag einzutragen. <a href="https://user-images.githubusercontent.com/994131/162630507-381b5f77-b87a-42c8-968d-571afbe99d45.mp4" target='_blank'
+          rel='noopener noreferrer'>Hier</a> gibt es kleine Demo.
         </div>
-      </div>
-      <div style="padding-top:0.5rem;padding-bottom:0.5rem; display:flex">
-        <div>   
-          <span style="display:inline-block; background-color:#75ADE8; width: 13px; height: 13px; border-radius: 100px; margin-right: 4px;"></span>
-          <b>Map-Layout</b><br>
-          Die Hintergrundkarte erstrahlt in neuen Farben und zeigt Dir Hausnummern & ÖPNV-Haltestellen.`,
-
+      </div>`,
       `<div style="padding-top:0.5rem;padding-bottom:0.5rem; display:flex">
-      <div>Mit dem 
-        <span style="display:inline-block; background-color:#37DE8A; width: 13px; height: 13px; border-radius: 100px; margin: 0 4px 0 4px;"></span>
-        <b>Baum-Routing</b>
-        verfügt nun jeder Baum über einen ganz persönlichen Link, der sich prima mit Gieß-Freund*innen oder Grünflächenämtern teilen lässt.
-      </div>
+        <div>
+          <img style="width:25px; margin-right: 5px;" alt="Watering Icon" src="/images/icon-water.svg"/>
+          <b>Gießeinträge löschen</b><br>
+          Hat man seine Gießung am falschen Baum eingetragen, lässt sich diese nun löschen, wie folgende <a href="https://user-images.githubusercontent.com/994131/162630522-b3e9e84f-e7fe-4477-9398-86d84a4cdacc.mp4" target='_blank'
+          rel='noopener noreferrer'>Demo</a> zeigt.</div></div>
+          <div>
+          <img style="width:20px; margin-right: 5px;" alt="Info Icon" src="/images/Information_icon_1(png).png"/>
+          <b>Weiterführende Informationen zu den Bäumen</b><br>
+          Auf der Detail-Seite eines Baum sind nun, sofern vorhanden, die passenden Wikipedia-Artikel zu Baumart und -gattung verlinkt. Für ausgewählte Gattung sind zudem die Baumsteckbriefe vom BUND Leipzig referenziert.</div>
     </div>
-  Wenn Du in Sachen <i>technische Releases</i> auf dem Laufenden bleiben möchtest, dann schau doch mal in unserem Open Source
-  <a target="blank" href="https://github.com/CodeforLeipzig/tsb-trees-frontend">GitHub Repository</a>
-  vorbei und unterstütze uns beim Entwickeln. Die nächsten Features sind schon in Planung.`,
+    <br />
+    Aktuelle Informationen findest Du auch auf <a href="https://www.facebook.com/leipziggiesst" target='_blank' rel='noopener noreferrer'>Facebook</a>, <a href="https://www.instagram.com/leipziggiesst/" target='_blank' rel='noopener noreferrer'>Instagram</a> und unserer <a href="https://www.leipziggiesst.de/" target='_blank' rel='noopener noreferrer'>Homepage</a>.`,
     ],
   },
   loading: {
