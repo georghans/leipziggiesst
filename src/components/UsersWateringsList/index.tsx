@@ -117,12 +117,12 @@ const UsersWateringsList: FC<{
           </FlexRow>
           <SmallParagraph>{`${amount}l`}</SmallParagraph>
           <StyledIcon src={iconDrop} alt='Water drop icon' />
-          { canUpdateWaterings[wateringId] && !isUpdatingWatering && (
+          { canUpdateWaterings[wateringId] && canUpdateWaterings[wateringId].canUpdateWatering && !isUpdatingWatering && (
             <div onClick={() => history.push(`/watering/${wateringId}`)} style={{ paddingLeft: '10px', cursor: 'pointer' }}>
               <Pencil style={{ fontSize: 14 }} />
             </div>
           )}
-          { canUpdateWaterings[wateringId] && !isUpdatingWatering && (
+          { canUpdateWaterings[wateringId] && canUpdateWaterings[wateringId].canUpdateWatering && !isUpdatingWatering && (
             <div onClick={() => deleteWateringAsync(wateringId)} style={{ paddingLeft: '2px', cursor: 'pointer' }}>
               <Delete style={{ fontSize: 14 }} />
             </div>
