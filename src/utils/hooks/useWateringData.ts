@@ -21,6 +21,7 @@ export const useWateringData = (
   wateringData: WateringType | undefined;
   error: Error | null;
   invalidate: () => void;
+  invalidateWatering: (string) => void;
 } => {
   const queryClient = useQueryClient();
   const token = useAuth0Token();
@@ -38,6 +39,7 @@ export const useWateringData = (
       },
       error: null,
       invalidate: () => null,
+      invalidateWatering: () => null,
     };
   } else {
     const wateringDataParams = [`watering-${wateringId}`, wateringId, token];
@@ -48,12 +50,15 @@ export const useWateringData = (
       staleTime: Infinity,
       refetchOnWindowFocus: false,
     });
-
     return {
       wateringData,
       error,
       invalidate: () => {
         queryClient.invalidateQueries(wateringDataParams);
+      },
+      invalidateWatering: (wateringId) => {
+        const customWateringDataParams = [`watering-${wateringId}`, wateringId, token];
+        queryClient.invalidateQueries(customWateringDataParams);
       },
     };
   }

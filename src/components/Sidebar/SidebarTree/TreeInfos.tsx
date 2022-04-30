@@ -96,11 +96,6 @@ const CaretakerSublineSpan = styled.span`
   margin-left: -${p => p.theme.fontSizeM};
 `;
 
-const SublineSpan = styled.span`
-  margin-bottom: 0.75rem;
-  text-transform: capitalize;
-`;
-
 const TreeTitle = styled.h2`
   font-size: 24px;
   font-weight: 600;

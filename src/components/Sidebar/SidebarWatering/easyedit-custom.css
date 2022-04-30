@@ -1,0 +1,46 @@
+.watering-easy-edit-button-wrapper {
+  display: inline;
+}
+
+.watering-easy-edit-hover-on {
+  cursor: pointer;
+  font-style: italic;
+}
+
+.watering-easy-edit-radio-label {
+  display: block;
+}
+
+.watering-easy-edit-not-allowed {
+  cursor: not-allowed;
+}
+
+.watering-easy-edit-checkbox-label {
+  display: block;
+}
+
+.watering-easy-edit-textarea {
+  min-height: 40px;
+}
+
+.watering-easy-edit-button {
+  border: none;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 4px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.watering-easy-edit-component-wrapper {
+  display: inline-grid;
+}
+
+.watering-easy-edit-component-wrapper input {
+  width: 40px;
+  overflow: hidden;
+}
+
+.watering-easy-edit-validation-error {
+  color: red;
+}

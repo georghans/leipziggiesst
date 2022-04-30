@@ -9,7 +9,7 @@ const loadData: QueryFunction = async (): Promise<CommunityDataType> => {
 export const useCommunityData = (): {
   data: CommunityDataType | null;
   error: Error | null;
-  invalidate: () => void;
+  invalidate: () => Promise<void>;
 } => {
   const queryClient = useQueryClient();
   const dataParams = 'community-data';

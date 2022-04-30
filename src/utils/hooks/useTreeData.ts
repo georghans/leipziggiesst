@@ -38,7 +38,7 @@ export const useTreeData = (
 ): {
   treeData: SelectedTreeType | undefined;
   error: Error | null;
-  invalidate: () => void;
+  invalidate: () => Promise<void>;
 } => {
   const queryClient = useQueryClient();
   const { user } = useAuth0();
@@ -68,9 +68,11 @@ export const useTreeData = (
       isAdopted,
     },
     error: error || adoptedError,
-    invalidate: () => {
-      queryClient.invalidateQueries(treeDataParams);
-      queryClient.invalidateQueries(isAdoptedParams);
+    invalidate: async() => {
+      await Promise.all([
+        queryClient.invalidateQueries(treeDataParams),
+        queryClient.invalidateQueries(isAdoptedParams)
+      ])
     },
   };
 };

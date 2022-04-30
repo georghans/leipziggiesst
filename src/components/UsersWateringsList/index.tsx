@@ -1,12 +1,14 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Delete from '@material-ui/icons/Delete'
 import Pencil from '@material-ui/icons/Edit'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 import { useHistory } from 'react-router';
 import { WateringType } from '../../common/interfaces';
-import { useCanUpdateWatering } from '../../utils/hooks/useCanUpdateWatering';
+import { useCanUpdateWaterings } from '../../utils/hooks/useCanUpdateWaterings';
 import { useWateringActions } from '../../utils/hooks/useWateringActions';
-
+import useClickOutside from '../../utils/hooks/useClickOutside';
 import { formatUnixTimestamp } from '../../utils/formatUnixTimestamp';
 import SmallParagraph from '../SmallParagraph';
 import TreeButton from '../TreeButton';
@@ -79,56 +81,103 @@ const ToggleExpansionLink = styled.button`
 
 const MAX_ITEMS = 8;
 
+interface WateringRowPropTypes extends WateringType {
+  showTreeName: boolean;
+  canUpdateWatering: boolean;
+}
+
+const WateringRow: FC<WateringRowPropTypes> = ({
+  username,
+  timestamp,
+  amount,
+  treeId,
+  wateringId,
+  showTreeName,
+  canUpdateWatering,
+}) => {
+  const history = useHistory();
+  const [isDeleting, setIsDeleting] = useState(false);
+  const { deleteWatering } = useWateringActions(treeId);
+  const elRef = useClickOutside<HTMLDivElement>(() => setIsDeleting(false));
+
+  const escListener = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setIsDeleting(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isDeleting) {
+      document.removeEventListener('keyup', escListener);
+    }
+    document.addEventListener('keyup', escListener);
+    return () => document.removeEventListener('keyup', escListener);
+  }, [isDeleting, escListener]);
+
+  if (isDeleting) return (
+    <div style={{ width: "100%" }}>
+      <Loader type="ThreeDots" color="#37DE8A" height={20} width={40} />
+    </div>
+  )
+  return (
+    <Wrapper key={`Lastadopted-key-${wateringId}`}  style={{ height: showTreeName ? "40px": "25px"}} ref={elRef}>
+      <FlexRow>
+        { showTreeName ? <TreeButton
+          key={treeId}
+          label={treeId}
+          onClickHandler={() => {
+            history.push(`/tree/${treeId}`);
+          }}
+        /> : (
+          <Title>{username}</Title>
+        )}
+        <StyledTreeType>({formatUnixTimestamp(timestamp)})</StyledTreeType>
+      </FlexRow>
+      <SmallParagraph>{`${amount}l`}</SmallParagraph>
+      <StyledIcon src={iconDrop} alt='Water drop icon' />
+      { canUpdateWatering && !isDeleting && (
+        <div onClick={() => history.push(`/watering/${wateringId}`)} style={{ paddingLeft: '10px', cursor: 'pointer' }}>
+          <Pencil style={{ fontSize: 14 }} />
+        </div>
+      )}
+      { canUpdateWatering && !isDeleting && (
+        <div onClick={() => {
+          setIsDeleting(true);
+          try {
+            deleteWatering(wateringId);
+          } catch(e) {
+            setIsDeleting(false);
+          }
+        }} style={{ paddingLeft: '2px', cursor: 'pointer' }}>
+          <Delete style={{ fontSize: 14 }} />
+        </div>
+      )}
+    </Wrapper>
+  );
+};
+
 const UsersWateringsList: FC<{
   waterings: WateringType[];
-  showTreeName: Boolean,
+  showTreeName: boolean,
 }> = ({ waterings, showTreeName }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const history = useHistory();
-  const { isUpdatingWatering, deleteWatering } = useWateringActions(null);
   const surpassedMaxItems = waterings.length > MAX_ITEMS;
   const sortWaterings = (t1: WateringType, t2: WateringType) => t2.timestamp.localeCompare(t1.timestamp); 
   const listItems = isExpanded ? waterings : waterings.sort(sortWaterings).slice(0, MAX_ITEMS);
-  const canUpdateWaterings = new Map()
-  listItems.forEach(item => canUpdateWaterings[item.wateringId] =
-    useCanUpdateWatering(item.wateringId));
-
-  const deleteWateringAsync = async (wateringId) => {
-    await deleteWatering(wateringId);
-    // TODO find a better solution
-    window.location.reload();
-  }
+  const canUpdateWaterings = useCanUpdateWaterings(listItems.map(item => item.wateringId));
 
   return (
     <WrapperOuter>
-    {listItems.map(({ id, username, timestamp, amount, treeId, wateringId }: WateringType, index: number) => (
-        <Wrapper key={`Lastadopted-key-${id}-${index}`}  style={{ height: showTreeName ? "40px": "25px"}}>
-          <FlexRow>
-            { showTreeName ? <TreeButton
-              key={treeId}
-              label={treeId}
-              onClickHandler={() => {
-                history.push(`/tree/${treeId}`);
-              }}
-            /> : (
-              <Title>{username}</Title>
-            )}
-            <StyledTreeType>({formatUnixTimestamp(timestamp)})</StyledTreeType>
-          </FlexRow>
-          <SmallParagraph>{`${amount}l`}</SmallParagraph>
-          <StyledIcon src={iconDrop} alt='Water drop icon' />
-          { canUpdateWaterings[wateringId] && canUpdateWaterings[wateringId].canUpdateWatering && !isUpdatingWatering && (
-            <div onClick={() => history.push(`/watering/${wateringId}`)} style={{ paddingLeft: '10px', cursor: 'pointer' }}>
-              <Pencil style={{ fontSize: 14 }} />
-            </div>
-          )}
-          { canUpdateWaterings[wateringId] && canUpdateWaterings[wateringId].canUpdateWatering && !isUpdatingWatering && (
-            <div onClick={() => deleteWateringAsync(wateringId)} style={{ paddingLeft: '2px', cursor: 'pointer' }}>
-              <Delete style={{ fontSize: 14 }} />
-            </div>
-          )}
-        </Wrapper>
-      ))}
+    {listItems.map(entry => (
+      <WateringRow
+        key={entry.wateringId}
+        {...entry}
+        treeId={entry.treeId}
+        canUpdateWatering={canUpdateWaterings.canUpdateWaterings
+          && canUpdateWaterings.canUpdateWaterings[entry.wateringId]}
+        showTreeName={showTreeName}
+      />
+    ))}
       {surpassedMaxItems && (
         <ToggleExpansionLink onClick={() => setIsExpanded(!isExpanded)}>
           {isExpanded

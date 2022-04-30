@@ -18,7 +18,7 @@ const fetchUserData: QueryFunction<UserDataType | undefined> = async ({
 export const useUserData = (): {
   userData: UserDataType | undefined;
   error: Error | null;
-  invalidate: () => void;
+  invalidate: () => Promise<void>;
 } => {
   const { user } = useAuth0();
   const token = useAuth0Token();
