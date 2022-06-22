@@ -435,6 +435,21 @@
         ]
       },
       "geometry": { "type": "Point", "coordinates": [12.4443846, 51.2833188] }
-    }    
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220621_flooripunch",
+        "name": "Florian Schurig",
+        "type": "Privatperson",
+        "address": "Pfeffingerstr. 19, 04277 Leipzig",
+        "created": "21.06.2022",
+        "hints":[
+          "Einfach klingeln bei Balser/Schurig und bediene Dich dann im Hof beim großen Baum, links neben der Eingangstür, an der Wassertonne."
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.37909544026, 51.3080781] }
+    }
   ]
 }
+ 
