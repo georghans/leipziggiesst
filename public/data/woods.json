@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Antonienbrücke",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 12.321182351134427, 51.320941689904885 ], [ 12.321917875299125, 51.320904879178521 ], [ 12.321867250938984, 51.320696303347027 ], [ 12.32107598323468, 51.320710380894091 ], [ 12.321182351134427, 51.320941689904885 ] ] ] ] } }
+]
+}

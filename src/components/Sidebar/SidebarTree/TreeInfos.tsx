@@ -9,7 +9,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogActions from "@material-ui/core/DialogActions";
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import copy from "copy-to-clipboard"; 
+import copy from "copy-to-clipboard";
 
 import { getWaterNeedByAge } from '../../../utils/getWaterNeedByAge';
 
@@ -338,11 +338,11 @@ const TreeInfos: FC<{
             <InfoValue>{standortnr}</InfoValue>
           </InfoContainer>
         )}
-        {treeAge && (
+        {typeof treeAge === 'number' && (
           <>
             <InfoContainer>
               <span>Standalter</span>
-              <InfoValue>{treeAge} Jahre</InfoValue>
+              <InfoValue>{treeAge == 0 ? "jünger als " : ""} {treeAge == 0 ? 1 : treeAge} Jahr{treeAge > 1 ? "e" : ""}</InfoValue>
             </InfoContainer>
             <ExpandablePanel
               title={

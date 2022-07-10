@@ -50,6 +50,12 @@ export const loadTreesGeoJson = async (): Promise<ExtendedFeatureCollection> => 
       'lat': 51.328492865964243,
       'radolan_sum': 820,
       'age': 5
+    },{
+      'id': '4110',
+      'lng': 12.321279644966125,
+      'lat': 51.320883607664406,
+      'radolan_sum': 820,
+      'age': 0
     }]
     const geojson = createGeojson((data as unknown) as Tree[]);
     return geojson;

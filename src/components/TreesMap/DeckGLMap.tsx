@@ -51,6 +51,7 @@ interface DeckGLPropType {
 
   pumpsGeoJson: ExtendedFeatureCollection | null;
   waterSourcesGeoJson: ExtendedFeatureCollection | null;
+  woodsGeoJson: ExtendedFeatureCollection | null;
   selectedTreeId: string | undefined;
   selectedWaterSourceId: string | undefined;
   communityData: CommunityDataType['communityFlagsMap'];
@@ -113,10 +114,29 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
       visibleMapLayer,
       pumpsGeoJson,
       waterSourcesGeoJson,
+      woodsGeoJson,
     } = this.props;
 
     if (!treesGeoJson || !rainGeojson || !pumpsGeoJson) return [];
     const layers = [
+      new GeoJsonLayer({
+        id: 'woods',
+        data: woodsGeoJson as any,
+        opacity: 1.0,
+        visible: visibleMapLayer.indexOf('trees') >= 0 ? true : false,
+        stroked: true,
+        filled: false,
+        extruded: true,
+        wireframe: true,
+        getElevation: 7,
+        getLineColor: [0, 0, 0, 200],
+        getFillColor: [215, 234, 229, 200],
+        getRadius: 9,
+        pointRadiusMinPixels: 4,
+        pickable: false,
+        lineWidthScale: 3,
+        lineWidthMinPixels: 1.5,
+      }),
       new GeoJsonLayer({
         id: 'geojson',
         data: isMobile ? [] : (treesGeoJson as any),
@@ -182,10 +202,10 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
             minFilteredAge !== 0 || maxFilteredAge !== 320; // TODO: how to not hard-code these values?
 
           const treeIsWithinAgeRange =
-            treeAge && treeAge >= minFilteredAge && treeAge <= maxFilteredAge;
+            typeof treeAge === 'number' && treeAge >= minFilteredAge && treeAge <= maxFilteredAge;
 
           const treeIsWithinRelevantAgeRange =
-            treeAge && treeAge >= 4 && treeAge <= 15;
+            typeof treeAge === 'number' && treeAge >= 4 && treeAge <= 15;
 
           const colorsShallBeInterpolated =
             rainOrWaterDataExists &&
@@ -194,7 +214,7 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
               !ageFilterIsApplied);
 
           const colorShallBeTransparent =
-            (ageFilterIsApplied && !treeAge) ||
+            (ageFilterIsApplied && typeof treeAge !== 'number') ||
             (ageFilterIsApplied && !treeIsWithinAgeRange) ||
             !rainOrWaterDataExists;
 
@@ -218,17 +238,18 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
             // @ts-ignore
             const waterSum = wateredAmount ? numberOrDefault(wateredAmount) : 0;
             const radolanSum = numberOrDefault(radolan_sum);
-            const sum = radolanSum + waterSum; 
+            const sum = radolanSum + waterSum;
             const interpolated = interpolateColor(sum);
             return rgbStrToRgb(interpolated);
           }
 
-          if (treeAge && treeAge > 15) {
-            return colors.greygreen
-          } else if (treeAge && treeAge < 4) {
-            return colors.lightgreygreen
+          if (typeof treeAge === 'number') {
+            if (treeAge > 15) {
+              return colors.greygreen
+            } else if (treeAge < 4) {
+              return colors.lightgreygreen
+            }
           }
-
           return colors.transparent;
         },
         onClick: info => {
@@ -302,7 +323,6 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
           this._onClick(info.x, info.y, info.object);
         },
       }),
-      
     ];
 
     return layers;
@@ -376,7 +396,7 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
         anchorY: 32
       };
     } else if (d.properties.type == "Schöpfstelle") {
-      return { 
+      return {
         url: prefix + "images/river-icon-clipart.png",
         width: 32,
         height: 32,

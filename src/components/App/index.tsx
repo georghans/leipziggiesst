@@ -17,6 +17,7 @@ import { useCommunityData } from '../../utils/hooks/useCommunityData';
 import { useRainGeoJson } from '../../utils/hooks/useRainGeoJson';
 import { usePumpsGeoJson } from '../../utils/hooks/usePumpsGeoJson';
 import { useWaterSourcesGeoJson } from '../../utils/hooks/useWaterSourcesGeoJson';
+import { useWoodsGeoJson } from '../../utils/hooks/useWoodsGeoJson';
 import { useTreesGeoJson } from '../../utils/hooks/useTreesGeoJson';
 
 const AppContainer = styled.div`
@@ -42,13 +43,14 @@ const App: FC = () => {
   const { data: rainGeoJson } = useRainGeoJson();
   const { data: pumpsGeoJson } = usePumpsGeoJson();
   const { data: waterSourcesGeoJson } = useWaterSourcesGeoJson();
+  const { data: woodsGeoJson } = useWoodsGeoJson();
   const { data: treesGeoJson } = useTreesGeoJson();
   const { pathname } = useLocation();
 
   const isHome = pathname === '/';
   const showOverlay = isHome && overlay;
   const showMap = Boolean(
-    treesGeoJson && communityData && rainGeoJson && pumpsGeoJson && waterSourcesGeoJson
+    treesGeoJson && communityData && rainGeoJson && pumpsGeoJson && waterSourcesGeoJson && woodsGeoJson
   );
   const showLoading = !showMap;
   const showMapUI = showMap && !showOverlay;
