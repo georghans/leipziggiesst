@@ -449,7 +449,23 @@
         ]
       },
       "geometry": { "type": "Point", "coordinates": [12.37909544026, 51.3080781] }
-    }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220728_hildegarten",
+        "name": "HILDEGARTEN Leipzig",
+        "organisation": "HILDEGARTEN",
+        "type": "Unternehmen",
+        "address": "Röckener Straße 44, 04229 Leipzig",
+        "created": "28.07.2022",
+        "hints":[
+          "Bitte zu den Öffnungszeiten in den Garten kommen und nach dem Wasserschlauch fragen: Mo 16-19 Uhr, Do 16-19 Uhr, Fr 16-19 Uhr, Sa 13-19 Uhr, So 13-19 Uhr.", 
+          "Falls ernsthaftes Interesse an regelmäßigen Gießdiensten besteht, ist es möglich einen Schlüssel vom Garten zu bekommen."
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.3222829, 51.3228341] }
+    }    
   ]
 }
  
