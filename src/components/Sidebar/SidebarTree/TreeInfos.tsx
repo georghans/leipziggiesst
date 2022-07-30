@@ -39,13 +39,13 @@ const logoInfo = '/images/Information_icon_1(png).png'
 
 const steckbriefe = {
   "Tilia": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf",
-  "Betula": "https://greatfono.com/c/7023885053899511182",
-  "Salix": "https://greatfono.com/c/6990567952668055182",
-  "Castanea": "https://greatfono.com/c/2891255545816357082",
-  "Quercus": "https://greatfono.com/c/2569422748747813082",
-  "Platanus": "https://greatfono.com/c/5479250807515618972",
-  "Acer": "https://greatfono.com/c/4072376172398825972",
-  "Fraxinus": "https://greatfono.com/c/8353480080627210972"
+  "Betula": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf#page=7",
+  "Salix": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf#page=8",
+  "Castanea": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf#page=6",
+  "Quercus": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf#page=5",
+  "Platanus": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf#page=4",
+  "Acer": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf#page=2",
+  "Fraxinus": "https://www.bund-leipzig.de/fileadmin/leipzig/PDF/Steckbrief/Baumsteckbriefe.pdf#page=3"
 }
 
 const WikipediaLogo = styled.img`
