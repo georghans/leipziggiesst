@@ -23,6 +23,7 @@ interface Content {
     subline: string;
     disclaimer: string;
     description: string[];
+    callToAction: string;
   };
   //pls do not delete the following eventNote section to facilitate process of enabling/disabling future news & notes
   //if event announcemnt is needed just de-comment this section and fill in the announcement text below
@@ -70,6 +71,7 @@ const content: Content = {
       'Auf dieser Plattform kannst Du Dich über Bäume in Deiner Nachbarschaft und ihren Wasserbedarf informieren. Du kannst für einzelne Bäume eine Gießpatenschaft übernehmen und/oder auch dokumentieren, wieviel erfrischende Kaltgetränke Du ihnen gegeben hast.',
       'Informiere Dich <a target="blank" href="https://stiftung-ecken-wecken.de/content/fragen-antworten">hier</a> über das richtige Gießen von Bäumen. Wenn Du die Gieß-App von LEIPZIG GIESST regelmäßig nutzen möchtest, solltest Du ein Konto erstellen. Die Karte kannst Du aber auch ohne Konto erkunden.',
     ],
+    callToAction: 'Zur Prämierung der fleißigsten Gießer:innen vergeben wir am Ende dieser Gießsaison je einen Baumbewässerungsbeutel an die 10 App-Nutzer:innen mit den meisten gegossenen Litern. Also: Eifrig gießen und Wassermenge sorgfältig in die App eintragen.'
   },
   //pls do not delete the following eventNote section to facilitate process of enabling/disabling future news & notes
   // eventNote: {
