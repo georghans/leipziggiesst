@@ -464,8 +464,21 @@
           "Falls ernsthaftes Interesse an regelmäßigen Gießdiensten besteht, ist es möglich einen Schlüssel vom Garten zu bekommen."
         ]
       },
-      "geometry": { "type": "Point", "coordinates": [12.321778535842896, 51.322598398186855] }          
-    }    
+      "geometry": { "type": "Point", "coordinates": [12.321778535842896, 51.322598398186855] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220806_hsp_218",
+        "name": "HSP Nr. 218",
+        "type": "Handschwengelpumpe",
+        "address": "Davidstraße 9",
+        "created": "06.08.2022",
+        "url": "https://denkmalliste.denkmalpflege.sachsen.de/CardoMap/Denkmalliste_Report.aspx?HIDA_Nr=09292455",
+        "images": [ "Pumpe_Davidstrasse.jpg" ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.356825, 51.334835] }
+    }
   ]
 }
- 
+
