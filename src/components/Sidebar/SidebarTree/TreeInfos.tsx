@@ -338,6 +338,14 @@ const TreeInfos: FC<{
             <InfoValue>{standortnr}</InfoValue>
           </InfoContainer>
         )}
+        {treeAge === undefined && (
+          <>
+            <InfoContainer>
+              <span>Standalter</span>
+              <InfoValue>unbekannt</InfoValue>
+            </InfoContainer>
+          </>
+        )}
         {typeof treeAge === 'number' && (
           <>
             <InfoContainer>

@@ -202,10 +202,10 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
             minFilteredAge !== 0 || maxFilteredAge !== 320; // TODO: how to not hard-code these values?
 
           const treeIsWithinAgeRange =
-            typeof treeAge === 'number' && treeAge >= minFilteredAge && treeAge <= maxFilteredAge;
+            treeAge === undefined || (typeof treeAge === 'number' && treeAge >= minFilteredAge && treeAge <= maxFilteredAge);
 
           const treeIsWithinRelevantAgeRange =
-            typeof treeAge === 'number' && treeAge >= 4 && treeAge <= 15;
+            treeAge === undefined || (typeof treeAge === 'number' && treeAge >= 4 && treeAge <= 15);
 
           const colorsShallBeInterpolated =
             rainOrWaterDataExists &&
@@ -214,7 +214,6 @@ class DeckGLMap extends React.Component<DeckGLPropType, DeckGLStateType> {
               !ageFilterIsApplied);
 
           const colorShallBeTransparent =
-            (ageFilterIsApplied && typeof treeAge !== 'number') ||
             (ageFilterIsApplied && !treeIsWithinAgeRange) ||
             !rainOrWaterDataExists;
 
