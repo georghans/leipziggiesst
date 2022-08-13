@@ -478,6 +478,21 @@
         "images": [ "Pumpe_Davidstrasse.jpg" ]
       },
       "geometry": { "type": "Point", "coordinates": [12.356825, 51.334835] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220813_pump_knochenplatz",
+        "name": "Pumpe auf dem Karl-Heine-Platz Spielplatz",
+        "type": "Wasserpumpe",
+        "address": "Karl-Heine-Platz",
+        "created": "12.08.2022",
+        "url": "https://www.leipzig.de/detailansicht-adresse/spielplatz-karl-heine-platz/",
+        "hints":[
+          "Wasserstrahl ist leider eher schwach. Dauert ein paar Minuten, einen 25-Liter-Kanister zu befüllen."
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.336188703775406,51.33314638584452] }
     }
   ]
 }
