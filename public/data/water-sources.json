@@ -493,7 +493,23 @@
         ]
       },
       "geometry": { "type": "Point", "coordinates": [12.336188703775406,51.33314638584452] }
-    }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220824_stefanmoeller",
+        "name": "Stefan Moeller",
+        "type": "Privatperson",
+        "address": "Blankenburger Str. 10, 04207 Leipzig",
+        "created": "24.08.2022",
+        "hints":[
+          "Schlauch wird nach Voranmeldung zum Befüllen am Fußweg bereitgestellt.", 
+          "Bitte vorab anmelden unter Tel. 0177-7922117, am besten am Vortag Nachricht senden oder anrufen.",
+          "bevorzugte Tageszeit: 18:00 - 21:00 Uhr"
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.27127933025568, 51.316313550000004] }
+    }   
   ]
 }
 
