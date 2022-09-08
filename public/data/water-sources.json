@@ -482,17 +482,19 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "20220813_pump_knochenplatz",
-        "name": "Pumpe auf dem Karl-Heine-Platz Spielplatz",
-        "type": "Wasserpumpe",
-        "address": "Karl-Heine-Platz",
-        "created": "12.08.2022",
-        "url": "https://www.leipzig.de/detailansicht-adresse/spielplatz-karl-heine-platz/",
-        "hints":[
-          "Wasserstrahl ist leider eher schwach. Dauert ein paar Minuten, einen 25-Liter-Kanister zu befüllen."
+        "id": "20220818_tap_friedhof_lindenau",
+        "name": "Wasserentnahmestelle auf dem Friedhof Lindenau",
+        "type": "Friedhof",
+        "organisation": "Friedhof Lindenau",
+        "address": "Merseburger Straße 148, 04177 Leipzig",
+        "created": "18.08.2022",
+        "url": "https://www.friedhofsverband-leipzig.de/friedhof-leipzig-lindenau/",
+        "hints": [
+            "Wasserhahn mit hoher Durchflussrate und Auffangbecken",
+            "Öffnungszeiten siehe Webseite"
         ]
       },
-      "geometry": { "type": "Point", "coordinates": [12.336188703775406,51.33314638584452] }
+      "geometry": { "type": "Point", "coordinates": [12.3191223,51.3398509] }
     },
     {
       "type": "Feature",
@@ -509,7 +511,61 @@
         ]
       },
       "geometry": { "type": "Point", "coordinates": [12.27127933025568, 51.316313550000004] }
-    }   
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220718_leipzig_giesst_mobil_schleussig",
+        "name": "LEIPZIG GIESST-Mobil Schleußig",
+        "type": "LEIPZIG GIESST-Mobil",
+        "address": "Industriestraße 24, 04229 Leipzig",
+        "created": "18.07.2022",
+        "url": "https://leipzig.depot.social/ressourcen/leipzig-giesst-mobil-schleusig-04229",
+        "hints":[
+          "diese ehemalige 120 Liter-Tonne kann man sich ausleihen und zum Wassertransport nutzen, halb gefüllt lässt sie sich noch gut fahren
+          "in der Tonne befinden sich 2 große und 2 kleine Gießkannen und ein paar Gießtipps unter dem Tonnendeckel", 
+          "klingeln bei Treffhaltestelle",
+          "Keine festen Buchungszeiten, bitte Wunschzeiten im Buchungskalender von depot.social Leipzig (Seite ist in diesem Panel verlinkt) angeben."
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.34189655,51.3255037] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220718_leipzig_giesst_mobil_zentrum_suedost",
+        "name": "LEIPZIG GIESST-Mobil Zentrum-Südost",
+        "type": "LEIPZIG GIESST-Mobil",
+        "address": "Josephinenstr. 25, 04317 Leipzig",
+        "created": "18.07.2022",
+        "url": "https://leipzig.depot.social/ressourcen/leipzig-giesst-mobil-zentrum-suedost-04317",
+        "hints":[
+          "diese ehemalige 120 Liter-Tonne kann man sich ausleihen und zum Wassertransport nutzen, halb gefüllt lässt sie sich noch gut fahren
+          "in der Tonne befinden sich 2 große und 2 kleine Gießkannen und ein paar Gießtipps unter dem Tonnendeckel", 
+          "klingeln bei Pfeiffer",
+          "Mo-Fr nach 17:30 Uhr oder am Wochenende ab 10 Uhr. Bitte entsprechend passende Wunschzeiten im Buchungskalender von depot.social Leipzig (Seite ist in diesem Panel verlinkt) angeben."
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.399025444670855,51.33136795] }
+    },   
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20220718_leipzig_giesst_mobil_altlindenau",
+        "name": "LEIPZIG GIESST-Mobil Alt-Lindenau",
+        "type": "LEIPZIG GIESST-Mobil",
+        "address": "Endersstr. 29, 04177 Leipzig",
+        "created": "03.08.2022",
+        "url": "https://leipzig.depot.social/ressourcen/leipzig-giesst-mobil-alt-lindenau-04177",
+        "hints":[
+          "diese ehemalige 120 Liter-Tonne kann man sich ausleihen und zum Wassertransport nutzen, halb gefüllt lässt sie sich noch gut fahren
+          "in der Tonne befinden sich 2 große und 2 kleine Gießkannen und ein paar Gießtipps unter dem Tonnendeckel", 
+          "klingeln bei Thiess/Matscheroth",
+          "Do, Sa und So zwischen 10 bis 18 Uhr, an den anderen Wochentagen zwischen 18 und 20 Uhr. Bitte entsprechend passende Wunschzeiten im Buchungskalender von depot.social Leipzig (Seite ist in diesem Panel verlinkt) angeben."
+        ]
+      },
+      "geometry": { "type": "Point", "coordinates": [12.328250949999994,51.33338035] }
+    }    
   ]
 }
 
