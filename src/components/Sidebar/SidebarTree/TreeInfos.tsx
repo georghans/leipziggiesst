@@ -151,6 +151,7 @@ const TreeInfos: FC<{
     artwikicommons,
     caretaker,
     waterings,
+    notes,
   } = selectedTreeData;
 
   const steckbrief = gattung && steckbriefe[gattung];
@@ -363,6 +364,17 @@ const TreeInfos: FC<{
               <WaterNeedsInfo />
             </ExpandablePanel>
           </>
+        )}
+        { notes && (
+          <ExpandablePanel
+            title={
+              <>
+                <span style={{ marginRight: 8 }}>Hintergrund-Infos</span>
+              </>
+            }
+          >
+            <span dangerouslySetInnerHTML={{ __html: `${notes}` }}></span>
+          </ExpandablePanel>
         )}
         <ExpandablePanel
           title={

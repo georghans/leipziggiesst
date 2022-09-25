@@ -124,6 +124,7 @@ export interface Tree {
   standortnr?: string | null;
   kennzeich?: string | null;
   caretaker?: string | null;
+  notes?: string | null;
 }
 
 export interface TreeGeojsonFeatureProperties
