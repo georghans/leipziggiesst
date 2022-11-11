@@ -7,7 +7,6 @@ import { Map } from '../TreesMap';
 import Sidebar from '../Sidebar';
 import Nav from '../Nav';
 import MapLayerLegend from '../Legend/MapLayersLegend';
-import Cookie from '../Cookie';
 import Loading from '../Loading';
 import Overlay from '../Overlay';
 import Credits from '../Credits';
@@ -66,7 +65,6 @@ const App: FC = () => {
       {showOverlay && <Overlay />}
       {showMapUI && <Nav isNavOpened={!isHome} />}
       <Credits />
-      <Cookie />
       {showMapUI && <MapLayerLegend />}
       <ImprintAndPrivacyContainer>
         <ImprintAndPrivacy />
